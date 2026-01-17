@@ -3,9 +3,15 @@
   
   **Bridging Citizens and Welfare Programs through Intelligent Information Retrieval**
 
-  <p align="center">
-  <img src="[https://i.postimg.cc/nrL8ScR2/Zynfo-Graph-icon.jpg"](https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg)" alt="Logo" width="144" height="144">
+<p align="center">
+  <a href="https://i.postimg.cc/nrL8ScR2/Zynfo-Graph-icon.jpg">
+    <img src="https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg"
+         alt="Logo"
+         width="144"
+         height="144">
+  </a>
 </p>
+
   
   *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
 
@@ -82,7 +88,7 @@ Every answer includes:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="144" />
+  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="224" height="144" />
 </p>
 
 ---
