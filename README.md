@@ -11,12 +11,9 @@
        style="border-radius:50%; object-fit:cover;">
 </p>
 
-
   
-  *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
+  *1M1B AI FOR SUSTAINABILITY VIRTUAL INTERNSHIP IN COLLABORATION WITH IBM SKILLSBUILD AND AICTE*
 ---
-
-*1M1B AI FOR SUSTAINABILITY VIRTUAL INTERNSHIP IN COLLABORATION WITH IBM SKILLSBUILD AND AICTE*
 
 <p align="center">
   <img src="https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg"
@@ -26,6 +23,7 @@
        style="border-radius:50%; object-fit:cover;">
 </p>
 
+  *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
 
 ---
 ## 🎯 Overview
