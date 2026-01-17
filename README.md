@@ -5,9 +5,10 @@
 
 <p align="center">
   <img src="https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg"
-       width="200"
-       height="200"
-       style="border-radius: 50%;">
+       alt="Logo"
+       width="220"
+       height="220"
+       style="border-radius:50%; object-fit:cover;">
 </p>
 
 
@@ -87,7 +88,7 @@ Every answer includes:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="1517" height="1898" />
+  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="1080" height="1080" />
 </p>
 
 ---
