@@ -88,7 +88,7 @@ Every answer includes:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="1080" height="1080" />
+  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="512" height="720" />
 </p>
 
 ---
