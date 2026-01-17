@@ -1,13 +1,9 @@
 # SchemeSync: AI-Powered Government Schemes Assistant 🏛️
-<div align="center">
-  <img src="assets/logo.png" alt="SchemeSync Logo" width="200"/>
+
   
   **Bridging Citizens and Welfare Programs through Intelligent Information Retrieval**
   
   *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
-
-  [Features](#-key-features) • [Demo](#-demo) • [Installation](#-installation) • [Documentation](#-documentation) • [Contributing](#-contributing)
-</div>
 
 ## 🎯 Overview
 
@@ -20,6 +16,20 @@
 - 🚀 **Instant Answers** - Information in seconds, not hours
 - 🔒 **Privacy-First** - No personal data collection
 - 📱 **Accessible** - Simple interface for all education levels
+
+-------------------------------------------------------------------------------------------------------
+ *"Predicting the future isn’t magic, it’s artificial intelligence."* 
+ 
+ -------------------------------------------------------------------------------------------------------
+**🔗 Get In Touch :**
+
+> **Connect with me on LinkedIn:**  
+[<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="24" height="24" style="vertical-align:middle;"/> LinkedIn Profile](https://www.linkedin.com/in/nandeesh71)
+
+> **Visit my portfolio:**  
+[<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" width="24" height="24" style="vertical-align:middle;"/> Portfolio Website](https://nandeesh-71.web.app)
+
+-------------------------------------------------------------------------------------------------------
 
 ---
 
@@ -82,17 +92,6 @@ LLM: Llama 3.3 70B (Groq API) / IBM Granite 13B (Watsonx)
 Package Manager: UV
 ```
 
-### Key Libraries
-```python
-langchain              # RAG orchestration
-langchain-chroma       # Vector store integration
-langchain-huggingface  # Embedding models
-langchain-text-splitters # Document chunking
-chromadb               # Vector database
-groq                   # LLM API client
-python-dotenv          # Environment management
-```
-
 ### IBM Integration
 - **IBM Granite Embedding Model**: Multilingual semantic search (30+ languages)
 - **IBM Watsonx.ai**: Production-ready LLM deployment option
@@ -101,8 +100,6 @@ python-dotenv          # Environment management
 ---
 
 ## 📦 Installation
-
-### Option 1: Using UV (Recommended)
 
 ```bash
 # 1. Clone the repository
@@ -125,23 +122,6 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-### Option 2: Using pip
-
-```bash
-# 1. Clone repository
-git clone https://github.com/yourusername/SchemeSync.git
-cd SchemeSync
-
-# 2. Create virtual environment
-python -m venv venv
-
-# 3. Activate environment
-# Windows
-venv\Scripts\activate
-
-# 4. Install dependencies
-pip install -r requirements.txt
-```
 
 ### Environment Configuration
 
@@ -155,10 +135,6 @@ GROQ_API_KEY=your_groq_api_key_here
 IBM_CLOUD_API_KEY=your_ibm_api_key
 IBM_PROJECT_ID=your_project_id
 ```
-
-**How to get API keys:**
-- **Groq**: Sign up at [console.groq.com](https://console.groq.com) (Free tier available)
-- **IBM Cloud**: Create account at [cloud.ibm.com](https://cloud.ibm.com) and enable Watsonx.ai
 
 ---
 
@@ -211,6 +187,7 @@ options for farmers:
    Department: Tamil Nadu Agriculture Department
 
 ═══════════════════════════════════════════════════════════════
+```
 
 ## 📊 Dataset
 
