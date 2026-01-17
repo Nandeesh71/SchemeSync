@@ -82,7 +82,7 @@ Every answer includes:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="[https://i.postimg.cc/nrL8ScR2/Zynfo-Graph-icon.jpg](https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png)" alt="architecture" width="144" height="144">
+  <img src="https://i.postimg.cc/tRkWB0Pr/diagram-export-1-18-2026-1-04-AM.png" width="144" />
 </p>
 
 ---
@@ -223,7 +223,7 @@ options for farmers:
 5. **Embedding**: Converted to vectors using IBM Granite model
 6. **Indexing**: Stored in ChromaDB for fast retrieval
 
-**Disclaimer**: This dataset is intended for educational purposes. Users should verify scheme details from official government portals before applying.
+**⚠️Disclaimer 🚫**: This dataset is intended for educational purposes. Users should verify scheme details from official government portals before applying.
 
 ---
 
