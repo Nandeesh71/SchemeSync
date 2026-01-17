@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg"
+  <img src="https://internship.aicte-india.org/uploads/logo/CORPORATE67178438cf1fa1729594424.png"
        alt="Logo"
        width="220"
        height="220"
