@@ -1,0 +1,8 @@
+langchain-core
+langchain-text-splitters
+langchain-chroma
+langchain-huggingface
+chromadb
+huggingface-hub
+sentence-transformers
+groq
