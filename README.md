@@ -14,7 +14,20 @@
 
   
   *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
+---
 
+*1M1B AI FOR SUSTAINABILITY VIRTUAL INTERNSHIP IN COLLABORATION WITH IBM SKILLSBUILD AND AICTE*
+
+<p align="center">
+  <img src="https://i.pinimg.com/originals/11/c4/c5/11c4c5b58b96ac77370bcffa62cc59d1.jpg"
+       alt="Logo"
+       width="220"
+       height="220"
+       style="border-radius:50%; object-fit:cover;">
+</p>
+
+
+---
 ## 🎯 Overview
 
 **SchemeSync** is an AI-powered assistant that democratizes access to government welfare schemes in Tamil Nadu and across India. Using advanced **Retrieval-Augmented Generation (RAG)** technology, it helps citizens discover relevant schemes through natural language queries in **Tamil, English, or mixed languages**.
