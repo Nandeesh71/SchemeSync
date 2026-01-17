@@ -1,11 +1,4 @@
 # SchemeSync: AI-Powered Government Schemes Assistant 🏛️
-
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![LangChain](https://img.shields.io/badge/LangChain-Latest-green.svg)](https://python.langchain.com/)
-[![IBM Granite](https://img.shields.io/badge/IBM-Granite_Embedding-purple.svg)](https://huggingface.co/ibm-granite)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
-
 <div align="center">
   <img src="assets/logo.png" alt="SchemeSync Logo" width="200"/>
   
@@ -15,28 +8,6 @@
 
   [Features](#-key-features) • [Demo](#-demo) • [Installation](#-installation) • [Documentation](#-documentation) • [Contributing](#-contributing)
 </div>
-
----
-
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
-- [Key Features](#-key-features)
-- [System Architecture](#-system-architecture)
-- [Technology Stack](#-technology-stack)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [Dataset](#-dataset)
-- [Responsible AI](#-responsible-ai)
-- [Use Cases](#-use-cases)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
-
----
 
 ## 🎯 Overview
 
@@ -62,10 +33,6 @@
 - Time-consuming manual searches
 
 **Solution:** SchemeSync uses semantic search and AI to provide personalized, clear guidance on eligibility, benefits, and application procedures through a conversational interface.
-
-**SDG Alignment:**
-- 🎯 Primary: **SDG 1** - No Poverty
-- 🎯 Secondary: **SDG 10** - Reduced Inequalities, **SDG 16** - Strong Institutions
 
 ---
 
@@ -100,55 +67,6 @@ Every answer includes:
 
 ## 🏗️ System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        USER QUERY                            │
-│          "What schemes for women entrepreneurs?"             │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│         IBM GRANITE MULTILINGUAL EMBEDDING                   │
-│    Converts query into 768-dimensional vector                │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│              CHROMADB VECTOR DATABASE                        │
-│    Semantic search finds top 5 relevant schemes              │
-│    Using cosine similarity (500+ indexed schemes)            │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│           CONTEXT AUGMENTATION LAYER                         │
-│    Chunk documents (800 chars, 150 overlap)                  │
-│    Assemble with metadata (dept, category, URL)             │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│         LARGE LANGUAGE MODEL GENERATION                      │
-│    Structured prompt + Retrieved context                     │
-│    Temperature: 0.3 (factual), Max tokens: 900              │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  STRUCTURED OUTPUT                           │
-│  Scheme | Beneficiaries | Benefits | Eligibility | Process  │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### RAG Pipeline Components
-
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Embedding** | IBM Granite 278M Multilingual | Convert text to semantic vectors |
-| **Storage** | ChromaDB | Persistent vector database |
-| **Retrieval** | Cosine Similarity | Find top-K relevant schemes |
-| **Generation** | LLM (Groq/Watsonx) | Generate structured answers |
-| **Chunking** | RecursiveTextSplitter | 800 chars with 150 overlap |
 
 ---
 
@@ -183,11 +101,6 @@ python-dotenv          # Environment management
 ---
 
 ## 📦 Installation
-
-### Prerequisites
-- Python 3.10 or higher
-- 4GB RAM minimum (8GB recommended)
-- Internet connection for API access
 
 ### Option 1: Using UV (Recommended)
 
@@ -225,8 +138,6 @@ python -m venv venv
 # 3. Activate environment
 # Windows
 venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
 
 # 4. Install dependencies
 pip install -r requirements.txt
@@ -300,85 +211,6 @@ options for farmers:
    Department: Tamil Nadu Agriculture Department
 
 ═══════════════════════════════════════════════════════════════
-```
-
-### Command-Line Options
-
-```bash
-# Rebuild vector database (if schemes updated)
-python main.py --rebuild
-
-# Use IBM Watsonx LLM instead of Groq
-python main.py --use-ibm-llm
-
-# Specify custom schemes JSON file
-python main.py --schemes-file custom_schemes.json
-
-# Enable debug mode
-python main.py --debug
-```
-
-### Python API Usage
-
-```python
-from scheme_sync import SchemeDataLoader, SchemesRAG
-
-# Load schemes
-schemes = SchemeDataLoader.load("schemes.json")
-
-# Initialize RAG system
-rag = SchemesRAG()
-rag.build_vectorstore(schemes)
-
-# Query
-answer = rag.answer("scholarships for engineering students")
-print(answer)
-```
-
----
-
-## 📁 Project Structure
-
-```
-SchemeSync/
-│
-├── main.py                    # Application entry point
-├── scheme_sync/
-│   ├── __init__.py
-│   ├── data_loader.py        # Scheme data validation & loading
-│   ├── rag_system.py         # RAG pipeline implementation
-│   ├── embeddings.py         # IBM Granite embedding wrapper
-│   └── utils.py              # Helper functions
-│
-├── data/
-│   ├── schemes.json          # Government schemes database
-│   └── schemes_metadata.json # Additional scheme information
-│
-├── chroma_db/                 # ChromaDB persistent storage (auto-generated)
-│
-├── tests/
-│   ├── test_data_loader.py
-│   ├── test_rag.py
-│   └── test_integration.py
-│
-├── docs/
-│   ├── ARCHITECTURE.md       # Detailed system design
-│   ├── API_REFERENCE.md      # Code API documentation
-│   └── USER_GUIDE.md         # End-user guide
-│
-├── assets/
-│   ├── logo.png
-│   ├── architecture_diagram.png
-│   └── demo.gif
-│
-├── requirements.txt          # Python dependencies
-├── .env.example             # Environment variable template
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
----
 
 ## 📊 Dataset
 
@@ -398,21 +230,6 @@ SchemeSync/
 - 👴 Senior Citizens & Pensions
 - ♿ Persons with Disabilities
 
-### Data Structure
-```json
-{
-  "name": "Scheme Name",
-  "category": "Agriculture",
-  "department": "Department of Agriculture",
-  "beneficiaries": "Small and marginal farmers",
-  "benefits": "50% subsidy on equipment",
-  "eligibility": "Tamil Nadu resident, land ownership",
-  "howToApply": "Visit district office or apply online",
-  "description": "Detailed scheme information...",
-  "url": "https://official-scheme-link.gov.in",
-  "source": "Tamil Nadu Government"
-}
-```
 
 ### Data Processing Pipeline
 1. **Collection**: Scraped from official portals (with proper attribution)
@@ -423,98 +240,6 @@ SchemeSync/
 6. **Indexing**: Stored in ChromaDB for fast retrieval
 
 **Disclaimer**: This dataset is intended for educational purposes. Users should verify scheme details from official government portals before applying.
-
----
-
-## 🛡️ Responsible AI
-
-### Fairness
-✅ **Multilingual Access**: Supports Tamil, English, Hindi, and 27+ languages  
-✅ **No Demographic Bias**: Equal service quality for all user profiles  
-✅ **Inclusive Data**: Covers schemes for diverse beneficiary groups  
-
-### Transparency
-✅ **Source Attribution**: Every answer cites department and official sources  
-✅ **Explainability**: Clear indication of how answers are generated  
-✅ **No Black Box**: Users understand system searches official data  
-
-### Privacy
-✅ **Zero PII Collection**: No Aadhaar, phone numbers, or personal details  
-✅ **Anonymous Usage**: No user tracking or profiling  
-✅ **No Query Logging**: Conversations not stored permanently  
-✅ **Secure APIs**: HTTPS encryption for all external calls  
-
-### Ethics
-✅ **Factual Accuracy**: Information sourced from official government data  
-✅ **No False Promises**: System clarifies it provides information, not guarantees  
-✅ **Harm Prevention**: Cannot be used to deny benefits or discriminate  
-
-### Limitations
-⚠️ **Database Currency**: Accuracy depends on scheme data being regularly updated  
-⚠️ **No Application Processing**: Provides information only, not submission  
-⚠️ **Internet Required**: Offline functionality not yet supported  
-⚠️ **Language Coverage**: Currently optimized for Tamil and English  
-
----
-
-## 💡 Use Cases
-
-### 1. Rural Farmer Scenario
-**User**: Murugan, 45-year-old farmer from Madurai  
-**Query**: "organic farming subsidy" (in Tamil-English mix)  
-**Outcome**: Discovers Tamil Nadu Organic Farming Scheme, learns eligibility, applies successfully
-
-### 2. Women Entrepreneur
-**User**: Lakshmi, aspiring tailoring business owner  
-**Query**: "loan for women small business"  
-**Outcome**: Finds Women Self-Help Group Loan Scheme (₹5L at 4% interest), gets application process
-
-### 3. Student Scholarship
-**User**: Priya, engineering student from low-income family  
-**Query**: "scholarship engineering poor family"  
-**Outcome**: Discovers Post-Matric Scholarship, Chief Minister's Scholar Award
-
-### 4. NGO Field Worker
-**User**: Social worker assisting 50 families  
-**Query**: Multiple queries for different beneficiary profiles  
-**Outcome**: Efficiently serves community with accurate scheme information
-
-### 5. Senior Citizen Pension
-**User**: Elderly person seeking retirement benefits  
-**Query**: "old age pension Tamil Nadu"  
-**Outcome**: Learns about Indira Gandhi National Old Age Pension Scheme
-
----
-
-## 🗺️ Roadmap
-
-### Phase 1: MVP ✅ (Current)
-- [x] Core RAG pipeline
-- [x] IBM Granite embedding integration
-- [x] Terminal interface
-- [x] Basic multilingual support
-- [x] 500+ schemes indexed
-
-### Phase 2: Enhanced UX (Q2 2025)
-- [ ] Web interface (React + FastAPI)
-- [ ] WhatsApp chatbot integration
-- [ ] Voice interface (Tamil & English)
-- [ ] SMS query support (USSD)
-- [ ] Mobile app (React Native)
-
-### Phase 3: Advanced Features (Q3 2025)
-- [ ] Personalized recommendations
-- [ ] Application status tracking
-- [ ] Document assistance (form filling)
-- [ ] Grievance redressal integration
-- [ ] Multi-state expansion (Karnataka, Kerala, Andhra Pradesh)
-
-### Phase 4: Enterprise (Q4 2025)
-- [ ] Government partnership for official deployment
-- [ ] Aadhaar-based auto-eligibility checking
-- [ ] Analytics dashboard for policymakers
-- [ ] API for third-party integration
-- [ ] Offline mode with local LLM
 
 ---
 
@@ -545,90 +270,3 @@ git push origin feature/amazing-feature
 # 5. Open Pull Request
 ```
 
-### Code Standards
-- Follow PEP 8 style guide
-- Add docstrings to all functions
-- Write unit tests for new features
-- Update documentation as needed
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2025 [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction...
-```
-
----
-
-## 🙏 Acknowledgments
-
-### Organizations
-- **1Million1Billion (1M1B)**: For the AI for Sustainability internship opportunity
-- **IBM SkillsBuild**: For AI education and Granite model access
-- **AICTE**: For supporting the internship program
-
-### Technologies
-- **IBM Granite Team**: For the multilingual embedding model
-- **LangChain Community**: For the RAG framework
-- **Groq**: For high-performance LLM inference
-- **ChromaDB**: For vector database technology
-
-### Data Sources
-- **SarkariYojana.com**: For scheme information
-- **Tamil Nadu Government**: For official scheme documentation
-
-### Special Thanks
-- Project mentor: [Mentor Name]
-- Community beta testers from Kadayanallur, Tamil Nadu
-- Open-source AI community
-
----
-
-## 📞 Contact & Support
-
-### Project Maintainer
-- **Name**: [Your Full Name]
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [@yourusername](https://github.com/yourusername)
-
-### Get Help
-- 🐛 **Report Bugs**: [GitHub Issues](https://github.com/yourusername/SchemeSync/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/SchemeSync/discussions)
-- 📧 **Email**: schemesync@example.com
-
-### Project Links
-- **Documentation**: [docs.schemesync.org](https://docs.schemesync.org)
-- **Demo Video**: [YouTube](https://youtube.com/...)
-- **Slides**: [Google Slides](https://slides.google.com/...)
-
----
-
-## 📈 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/SchemeSync?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/SchemeSync?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/yourusername/SchemeSync?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/SchemeSync)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/SchemeSync)
-
----
-
-<div align="center">
-
-**Built with ❤️ for the people of Tamil Nadu**
-
-*Making government welfare accessible to everyone, one query at a time*
-
-[⬆ Back to Top](#schemesync-ai-powered-government-schemes-assistant-)
-
-</div>
