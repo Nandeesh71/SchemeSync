@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  <img src="https://internship.aicte-india.org/uploads/logo/CORPORATE67178438cf1fa1729594424.png"
+  <img src="https://internship.aicte-india.org/uploads/logo/CORPORATE67178438cf1fa1729594424.png" width="220"
 </p>
 
   *A Retrieval-Augmented Generation (RAG) system making government schemes accessible to everyone*
