@@ -122,7 +122,7 @@ Package Manager: UV
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/SchemeSync.git
+git clone https://github.com/Nandeesh71/SchemeSync.git
 cd SchemeSync
 
 # 2. Install UV package manager
